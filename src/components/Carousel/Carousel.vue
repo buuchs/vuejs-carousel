@@ -1,17 +1,17 @@
 <template>
-  <div class="Carousel">
+  <div class="carousel">
     <slot></slot>
     <h1>{{ title }}</h1>
     <carousel-slide>
-      <img src="http://lorempicsum.com/futurama/630/300/1" alt="">
-      salut les gens
+      <img src="http://lorempicsum.com/futurama/630/300/1" alt="" class="carousel_slide">
+      <h2>Slide 1</h2>
     </carousel-slide>
     <carousel-slide>
-      Au revoir les gens
-      <img src="http://lorempicsum.com/futurama/630/300/1" alt="">
+      <img src="http://lorempicsum.com/futurama/630/300/1" alt="" class="carousel_slide">
+      <h2>Slide 2</h2>
     </carousel-slide>
-    <button class="carousel_nav carousel_next" @click.prevent="next">Suivant</button>
-    <button class="carousel_nav carousel_prev" @click.prevent="prev">Précédent</button>
+    <button class="carousel_nav carousel_next" @click.prevent="next"></button>
+    <button class="carousel_nav carousel_prev" @click.prevent="prev"></button>
   </div>
 </template>
 
@@ -22,7 +22,7 @@
     name: 'Carousel',
     data () {
       return {
-        title: 'Crarousel',
+        title: 'Carousel',
         index: 0,
         slides: []
       }
@@ -55,3 +55,46 @@
     }
   }
 </script>
+
+<style>
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .carousel {
+    overflow: hidden;
+    position: relative;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+  }
+  .carousel_nav {
+    position: absolute;
+    top:50%;
+    background: rgba(0,0,0,.5);
+    width: 50px;
+    height:50px;
+    left:10px;
+  }
+
+  .carousel_next {
+    right:10px;
+    left:auto;
+  }
+
+  .carousel_slide {
+    width: 100%;
+    height: auto;
+  }
+
+   h2 {
+     width: 100%;
+     position: absolute;
+     top:50%;
+     font-size:20px;
+     font-family:sans-serif;
+     text-transform: uppercase;
+     color:#fff;
+     text-align: center;
+   }
+</style>

@@ -1,7 +1,6 @@
 <template>
   <transition name="slide">
     <div v-show="visible">
-      index : {{ index }}
       <slot></slot>
     </div>
   </transition>
@@ -29,8 +28,9 @@
 
   .slide-leave-active {
     animation : slideOut .5s;
+    width: 100%;
     position: absolute;
-    top:0;
+    bottom:0;
     left:0;
   }
 
